@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: b29ed43a0aa059e409074c4ff5d27a9d
+timeCreated: 1500889235
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Yanolja Yache
+  fontNames:
+  - Yanolja Yache
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 7106bad3e3b08b148a9d92da78498f2b, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
