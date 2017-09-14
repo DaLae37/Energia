@@ -8,7 +8,6 @@ public class PlayerControl2 : MonoBehaviour
     public GameObject[] batteryList = new GameObject[6];
     public GameObject clear;
     public GameObject over;
-    public GameObject web;
     public bool onGround;
     public Camera cm;
     private Rigidbody rb;
@@ -21,9 +20,7 @@ public class PlayerControl2 : MonoBehaviour
     public float cmRotation;
     public float battery;
     public int ura;
-    public bool isWeb;
     public int hydro;
-    public bool once;
     public float speed = 3.5f;
     public Stage2SoundManager sm;
     // Use this for initialization
@@ -33,8 +30,6 @@ public class PlayerControl2 : MonoBehaviour
     }
     void Start()
     {
-        once = false;
-        isWeb = false;
         sm.BGM();
         battery = 50;
         gameOver = false;
@@ -53,11 +48,7 @@ public class PlayerControl2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(once && web == null)
-        {
-            once = false;
-        }
-        else if (Application.platform == RuntimePlatform.Android && once == false)
+        if (Application.platform == RuntimePlatform.Android)
         {
             if (Input.GetKeyUp(KeyCode.Escape))
             {
@@ -72,18 +63,7 @@ public class PlayerControl2 : MonoBehaviour
             battery -= Time.deltaTime * 3f;
         if (battery <= 0)
         {
-            once = true;
-            web.SetActive(true);
-            Time.timeScale = 0;
-        }
-        else if(Time.timeScale == 0 && isWeb)
-        {
-            battery = 50;
-            if (Input.GetMouseButtonDown(0))
-            {
-                isWeb = false;
-                Time.timeScale = 1;
-            }
+            gameOver = true;
         }
         else
         {

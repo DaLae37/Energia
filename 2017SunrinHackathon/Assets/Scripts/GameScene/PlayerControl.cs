@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 public class PlayerControl : MonoBehaviour {
     public static PlayerControl instance;
-    public GameObject[] batteryList = new GameObject[6];
     public GameObject clear;
     public GameObject over;
+    public GameObject pause;
+    public Image Battery;
     public bool onGround;
     public Camera cm;
     private Rigidbody rb;
@@ -16,6 +19,7 @@ public class PlayerControl : MonoBehaviour {
     public bool isJump;
     public bool cmRotate;
     public bool realClear;
+    public bool isPause;
     public float cmRotation;
     public float battery;
     public int coal;
@@ -29,7 +33,7 @@ public class PlayerControl : MonoBehaviour {
     }
     void Start () {
         sm.BGM();
-        battery = 50;
+        battery = 100;
         gameOver = false;
         realClear = false;
         isGameClear = false;
@@ -40,6 +44,7 @@ public class PlayerControl : MonoBehaviour {
         onGround = true;
         isTurn = false;
         isJump = false;
+        isPause = false;
         rb = GetComponent<Rigidbody>();
 	}
 	
@@ -49,7 +54,7 @@ public class PlayerControl : MonoBehaviour {
         {
             if (Input.GetKeyUp(KeyCode.Escape))
             {
-                SceneManager.LoadScene("selectScene");
+                Pause();
             }
         }
         if (transform.position.y < -5)
@@ -57,76 +62,14 @@ public class PlayerControl : MonoBehaviour {
             gameOver = true;
         }
         if (!isGameClear && Time.timeScale!=0)
-            battery -= Time.deltaTime * 1.5f;
+            battery -= Time.deltaTime * 2.5f;
         if (battery <= 0)
         {
             gameOver = true;
         }
         else
         {
-            if (battery >= 50)
-            {
-                batteryList[5].SetActive(true);
-                batteryList[4].SetActive(true);
-                batteryList[3].SetActive(true);
-                batteryList[2].SetActive(true);
-                batteryList[1].SetActive(true);
-                batteryList[0].SetActive(true);
-            }
-            else if(battery >= 40)
-            {
-                batteryList[5].SetActive(false);
-                batteryList[4].SetActive(true);
-                batteryList[3].SetActive(true);
-                batteryList[2].SetActive(true);
-                batteryList[1].SetActive(true);
-                batteryList[0].SetActive(true);
-            }
-            else if (battery >= 30)
-            {
-                batteryList[5].SetActive(false);
-                batteryList[4].SetActive(false);
-                batteryList[3].SetActive(true);
-                batteryList[2].SetActive(true);
-                batteryList[1].SetActive(true);
-                batteryList[0].SetActive(true);
-            }
-            else if (battery >= 20)
-            {
-                batteryList[5].SetActive(false);
-                batteryList[4].SetActive(false);
-                batteryList[3].SetActive(false);
-                batteryList[2].SetActive(true);
-                batteryList[1].SetActive(true);
-                batteryList[0].SetActive(true);
-            }
-            else if (battery >= 10)
-            {
-                batteryList[5].SetActive(false);
-                batteryList[4].SetActive(false);
-                batteryList[3].SetActive(false);
-                batteryList[2].SetActive(false);
-                batteryList[1].SetActive(true);
-                batteryList[0].SetActive(true);
-            }
-            else if (battery >= 0)
-            {
-                batteryList[5].SetActive(false);
-                batteryList[4].SetActive(false);
-                batteryList[3].SetActive(false);
-                batteryList[2].SetActive(false);
-                batteryList[1].SetActive(false);
-                batteryList[0].SetActive(true);
-            }
-            else if (battery <= 0)
-            {
-                batteryList[5].SetActive(false);
-                batteryList[4].SetActive(false);
-                batteryList[3].SetActive(false);
-                batteryList[2].SetActive(false);
-                batteryList[1].SetActive(false);
-                batteryList[0].SetActive(false);
-            }
+            Battery.fillAmount = (float)(battery / 100f);
         }
         //if (Input.touchCount > 0)
         //{
@@ -134,61 +77,59 @@ public class PlayerControl : MonoBehaviour {
         //    {
         if (Input.GetMouseButtonDown(0) && !isGameClear)
         {
-            if (Time.timeScale == 0)
+            if (EventSystem.current.IsPointerOverGameObject() == false)
             {
-                battery = 50;
-                Time.timeScale = 1;
-            }
-            else if (Stage1.instance.StageList[Stage1.instance.index] == 0)
-            {
-                sm.space();
-                if (onGround && transform.position.y >= 0)
-                { 
-                    rb.velocity = new Vector3(0f, 10f, 0f);
-                    onGround = false;
+
+                if (Time.timeScale == 0)
+                {
+                    battery = 100;
+                    Time.timeScale = 1;
                 }
-            }
-            else if (Stage1.instance.StageList[Stage1.instance.index] == 1)
-            {
-                sm.space();
-                transform.Rotate(Vector3.forward * 90);
-                cmRotate = true;
-            }
-            else if (Stage1.instance.StageList[Stage1.instance.index] == 2)
-            {
-                sm.space();
-                transform.Rotate(-Vector3.forward * 90);
-                cmRotate = true;
-            }
-            if (isJump)
-            {
-                isJump = false;
-                Stage1.instance.index++;
-            }
-            if (isTurn)
-            {
-                isTurn = false;
-                Stage1.instance.index++;
+                else if (Stage1.instance.StageList[Stage1.instance.index] == 0)
+                {
+                    sm.space();
+                    if (onGround && transform.position.y >= 0)
+                    {
+                        rb.velocity = new Vector3(0f, 10f, 0f);
+                        onGround = false;
+                    }
+                }
+                else if (Stage1.instance.StageList[Stage1.instance.index] == 1)
+                {
+                    sm.space();
+                    transform.Rotate(Vector3.forward * 90);
+                    cmRotate = true;
+                }
+                else if (Stage1.instance.StageList[Stage1.instance.index] == 2)
+                {
+                    sm.space();
+                    transform.Rotate(-Vector3.forward * 90);
+                    cmRotate = true;
+                }
+                if (isJump)
+                {
+                    isJump = false;
+                    Stage1.instance.index++;
+                }
+                if (isTurn)
+                {
+                    isTurn = false;
+                    Stage1.instance.index++;
+                }
+
             }
         }
         if (realClear)
         {
             Time.timeScale = 0;
             clear.SetActive(true);
-            if (Input.GetMouseButtonDown(0)){
-                SceneManager.LoadScene("Stage1Ending");
-            }
         }
         if (gameOver)
         {
             Time.timeScale = 0;
             over.SetActive(true);
-            if (Input.GetMouseButtonDown(0))
-            {
-                SceneManager.LoadScene("Stage1");
-            }
         }
-	}
+	}    
     private void FixedUpdate()
     {
         if (!isGameClear)
@@ -206,7 +147,7 @@ public class PlayerControl : MonoBehaviour {
                     cmRotate = false;
                     cmRotation = 0;
                 }
-                cm.transform.Rotate(new Vector3(0, 0, cmRotation));
+                cm.transform.Rotate(new Vector3(0f, 0f, cmRotation));
 
             }
             else if (Stage1.instance.StageList[Stage1.instance.index] == 2)
@@ -217,13 +158,13 @@ public class PlayerControl : MonoBehaviour {
                     cmRotate = false;
                     cmRotation = 0;
                 }
-                cm.transform.Rotate(new Vector3(0, 0, cmRotation));
+                cm.transform.Rotate(new Vector3(0f, 0f, cmRotation));
             }
         }
         if (isGameClear)
         {
             rb.useGravity = false;
-            transform.position = new Vector3(transform.position.x, transform.position.y + Time.smoothDeltaTime * 2.0f);
+            transform.position = new Vector3(transform.position.x, transform.position.y + Time.smoothDeltaTime * 2.0f,transform.position.z);
             if (transform.position.y >= 4)
             {
                 realClear = true;
@@ -232,6 +173,21 @@ public class PlayerControl : MonoBehaviour {
         if(transform.position.y > 10.0f && isGameClear)
         {
             Time.timeScale = 0;
+        }
+    }
+    public void Pause()
+    {
+        if (!isPause)
+        {
+            isPause = true;
+            pause.gameObject.SetActive(true);
+            Time.timeScale = 0;
+        }
+        else if (isPause)
+        {
+            isPause = false;
+            pause.gameObject.SetActive(false);
+            Time.timeScale = 1;
         }
     }
     private void OnCollisionEnter(Collision coll)
