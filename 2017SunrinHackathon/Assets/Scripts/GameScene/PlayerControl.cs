@@ -47,9 +47,9 @@ public class PlayerControl : MonoBehaviour {
         isPause = false;
         rb = GetComponent<Rigidbody>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update() {
         if (Application.platform == RuntimePlatform.Android)
         {
             if (Input.GetKeyUp(KeyCode.Escape))
@@ -61,7 +61,7 @@ public class PlayerControl : MonoBehaviour {
         {
             gameOver = true;
         }
-        if (!isGameClear && Time.timeScale!=0)
+        if (!isGameClear && Time.timeScale != 0)
             battery -= Time.deltaTime * 2.5f;
         if (battery <= 0)
         {
@@ -71,52 +71,50 @@ public class PlayerControl : MonoBehaviour {
         {
             Battery.fillAmount = (float)(battery / 100f);
         }
-        //if (Input.touchCount > 0)
-        //{
-        //    if (Input.GetTouch(0).phase == TouchPhase.Began)
-        //    {
-        if (Input.GetMouseButtonDown(0) && !isGameClear)
+        if (Input.touchCount > 0)
         {
-            if (EventSystem.current.IsPointerOverGameObject() == false)
+            if (Input.GetTouch(0).phase == TouchPhase.Began && !isPause && !isGameClear)
             {
-
-                if (Time.timeScale == 0)
+                if (!EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
                 {
-                    battery = 100;
-                    Time.timeScale = 1;
-                }
-                else if (Stage1.instance.StageList[Stage1.instance.index] == 0)
-                {
-                    sm.space();
-                    if (onGround && transform.position.y >= 0)
+                    if (Time.timeScale == 0)
                     {
-                        rb.velocity = new Vector3(0f, 10f, 0f);
-                        onGround = false;
+                        battery = 100;
+                        Time.timeScale = 1;
                     }
-                }
-                else if (Stage1.instance.StageList[Stage1.instance.index] == 1)
-                {
-                    sm.space();
-                    transform.Rotate(Vector3.forward * 90);
-                    cmRotate = true;
-                }
-                else if (Stage1.instance.StageList[Stage1.instance.index] == 2)
-                {
-                    sm.space();
-                    transform.Rotate(-Vector3.forward * 90);
-                    cmRotate = true;
-                }
-                if (isJump)
-                {
-                    isJump = false;
-                    Stage1.instance.index++;
-                }
-                if (isTurn)
-                {
-                    isTurn = false;
-                    Stage1.instance.index++;
-                }
+                    else if (Stage1.instance.StageList[Stage1.instance.index] == 0)
+                    {
+                        sm.space();
+                        if (onGround && transform.position.y >= 0)
+                        {
+                            rb.velocity = new Vector3(0f, 10f, 0f);
+                            onGround = false;
+                        }
+                    }
+                    else if (Stage1.instance.StageList[Stage1.instance.index] == 1)
+                    {
+                        sm.space();
+                        transform.Rotate(Vector3.forward * 90);
+                        cmRotate = true;
+                    }
+                    else if (Stage1.instance.StageList[Stage1.instance.index] == 2)
+                    {
+                        sm.space();
+                        transform.Rotate(-Vector3.forward * 90);
+                        cmRotate = true;
+                    }
+                    if (isJump)
+                    {
+                        isJump = false;
+                        Stage1.instance.index++;
+                    }
+                    if (isTurn)
+                    {
+                        isTurn = false;
+                        Stage1.instance.index++;
+                    }
 
+                }
             }
         }
         if (realClear)

@@ -40,6 +40,7 @@ public class miniGameSceneManager : MonoBehaviour {
     public void ResetData()
     {
         PlayerPrefs.DeleteAll();
+        Destroy(SoundManager.instance.gameObject);
         SceneManager.LoadScene("startScene");
     }
     public void unHideReset()

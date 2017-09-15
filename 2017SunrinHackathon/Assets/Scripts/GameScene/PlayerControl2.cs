@@ -73,49 +73,48 @@ public class PlayerControl2 : MonoBehaviour
         {
             BatteryImage.fillAmount = (float)(battery / 100f);
         }
-        //if (Input.touchCount > 0)
-        //{
-        //    if (Input.GetTouch(0).phase == TouchPhase.Began)
-        //    {
-        if (Input.GetMouseButtonDown(0) && !isGameClear)
+        if (Input.touchCount > 0)
         {
-            if (EventSystem.current.IsPointerOverGameObject() == false)
+            if (Input.GetTouch(0).phase == TouchPhase.Began && !isPause && !isGameClear)
             {
-                if (Time.timeScale == 0)
+                if (!EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
                 {
-                    battery = 100;
-                    Time.timeScale = 1;
-                }
-                else if (Stage2.instance.StageList[Stage2.instance.index] == 0)
-                {
-                    sm.space();
-                    if (onGround && transform.position.y >= 0)
+                    if (Time.timeScale == 0)
                     {
-                        rb.velocity = new Vector3(0f, 10f, 0f);
-                        onGround = false;
+                        battery = 100;
+                        Time.timeScale = 1;
                     }
-                }
-                else if (Stage2.instance.StageList[Stage2.instance.index] == 1)
-                {
-                    sm.space();
-                    transform.Rotate(Vector3.forward * 90);
-                    cmRotate = true;
-                }
-                else if (Stage2.instance.StageList[Stage2.instance.index] == 2)
-                {
-                    sm.space();
-                    transform.Rotate(-Vector3.forward * 90);
-                    cmRotate = true;
-                }
-                if (isJump)
-                {
-                    isJump = false;
-                    Stage2.instance.index++;
-                }
-                if (isTurn)
-                {
-                    isTurn = false;
-                    Stage2.instance.index++;
+                    else if (Stage2.instance.StageList[Stage2.instance.index] == 0)
+                    {
+                        sm.space();
+                        if (onGround && transform.position.y >= 0)
+                        {
+                            rb.velocity = new Vector3(0f, 10f, 0f);
+                            onGround = false;
+                        }
+                    }
+                    else if (Stage2.instance.StageList[Stage2.instance.index] == 1)
+                    {
+                        sm.space();
+                        transform.Rotate(Vector3.forward * 90);
+                        cmRotate = true;
+                    }
+                    else if (Stage2.instance.StageList[Stage2.instance.index] == 2)
+                    {
+                        sm.space();
+                        transform.Rotate(-Vector3.forward * 90);
+                        cmRotate = true;
+                    }
+                    if (isJump)
+                    {
+                        isJump = false;
+                        Stage2.instance.index++;
+                    }
+                    if (isTurn)
+                    {
+                        isTurn = false;
+                        Stage2.instance.index++;
+                    }
                 }
             }
         }

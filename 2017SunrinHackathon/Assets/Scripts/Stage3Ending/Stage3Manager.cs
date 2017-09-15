@@ -13,7 +13,7 @@ public class Stage3Manager : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonUp(0))
         {
             if(PlayerPrefs.GetInt("Stage1Clear") == 1 && PlayerPrefs.GetInt("Stage2Clear") == 1 && PlayerPrefs.GetInt("Stage3Clear") == 1)
             {
