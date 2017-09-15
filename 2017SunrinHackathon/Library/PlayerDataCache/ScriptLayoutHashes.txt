@@ -79,6 +79,7 @@ f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 1b8c02d0aa82fbf036a2b9b2d713eec3 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Stage1EndingSceneManager
 31ffd3472de838778d8b922284dd77c4 Assembly-CSharp.dll:.miniGameSceneManager
+4f240bb011b69e886d369ee0c1133773 Assembly-CSharp.dll:.Stage3SoundManager
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 cac917711d0e84d412d48737b6fc9ae7 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 706b890efe0a474d76b40e459ddb3e76 UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
@@ -115,9 +116,11 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingRenderer
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Stage2EndingSceneManager
 9f7b9d301e1cf431feef4374c3e7eb14 Assembly-CSharp.dll:.Stage2
+7a9017b9904d52fb0a17946b46ea6755 Assembly-CSharp.dll:.PlayerControl3
 ae705f06ec27377ad964acd50e806a1f Assembly-CSharp.dll:.deliverySceneManager
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.sceneManager
 8494197ff470ad45df3311e96aded400 Assembly-CSharp.dll:.Stage1
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.endingSceneManager
 4f240bb011b69e886d369ee0c1133773 Assembly-CSharp.dll:.Stage2SoundManager
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
@@ -143,10 +146,7 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingRenderer
+42bbf2b8df33721aa10d40a53e89843e Assembly-CSharp.dll:.Stage3
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Stage3Manager
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.selectSceneManager
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.mainSceneManager
-7a9017b9904d52fb0a17946b46ea6755 Assembly-CSharp.dll:.PlayerControl3
-42bbf2b8df33721aa10d40a53e89843e Assembly-CSharp.dll:.Stage3
-4f240bb011b69e886d369ee0c1133773 Assembly-CSharp.dll:.Stage3SoundManager
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.endingSceneManager
