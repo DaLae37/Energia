@@ -79,8 +79,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\deliveryScene\deliverySceneManager.cs" />
+    <Compile Include="Assets\Scripts\endingScene\endingSceneManager.cs" />
     <Compile Include="Assets\Scripts\GameScene\PlayerControl.cs" />
     <Compile Include="Assets\Scripts\GameScene\PlayerControl2.cs" />
+    <Compile Include="Assets\Scripts\GameScene\PlayerControl3.cs" />
     <Compile Include="Assets\Scripts\GameScene\StageSceneManager.cs" />
     <Compile Include="Assets\Scripts\mainScene\sceneManager.cs" />
     <Compile Include="Assets\Scripts\miniGame\miniGameSceneManager.cs" />
@@ -93,7 +95,9 @@
     <Compile Include="Assets\Scripts\Stage2\Stage2.cs" />
     <Compile Include="Assets\Scripts\Stage2\Stage2SoundManager.cs" />
     <Compile Include="Assets\Scripts\Stage2Ending\Stage2EndingSceneManager.cs" />
-    <Compile Include="Assets\Scripts\Stage3\Stage3Manager.cs" />
+    <Compile Include="Assets\Scripts\Stage3\Stage3.cs" />
+    <Compile Include="Assets\Scripts\Stage3\Stage3SoundManager.cs" />
+    <Compile Include="Assets\Scripts\Stage3Ending\Stage3Manager.cs" />
     <Compile Include="Assets\Scripts\startScene\mainSceneManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

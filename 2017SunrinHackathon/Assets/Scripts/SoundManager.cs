@@ -11,23 +11,24 @@ public class SoundManager : MonoBehaviour {
     {
         instance = this;
         audio = gameObject.AddComponent<AudioSource>();
+        audio.loop = true;
 
     }
     void Start () {
-
-	}
-	
-	public void mainBMG() { 
-        audio.clip = mainBGM;
-        audio.Play();
-	}
-    public void SceneChange()
+        DontDestroyOnLoad(gameObject.transform);
+    }
+    public void DestThis()
     {
         audio.Pause();
-        DontDestroyOnLoad(transform.gameObject);
     }
-    public void reStart()
+    public void mainBMG()
     {
+        audio.clip = mainBGM;
+        audio.volume = 0.5f;
         audio.Play();
+    }
+    public void setPay()
+    {
+        audio.UnPause();
     }
 }

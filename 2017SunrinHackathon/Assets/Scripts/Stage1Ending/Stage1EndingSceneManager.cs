@@ -12,6 +12,15 @@ public class Stage1EndingSceneManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (Input.GetMouseButton(0))
-            SceneManager.LoadScene("selectScene");
-	}
+        {
+            if (PlayerPrefs.GetInt("Stage1Clear") == 1 && PlayerPrefs.GetInt("Stage2Clear") == 1 && PlayerPrefs.GetInt("Stage3Clear") == 1)
+            {
+                SceneManager.LoadScene("endingScene");
+            }
+            else
+            {
+                SceneManager.LoadScene("deliveryScene");
+            }
+        }
+    }
 }

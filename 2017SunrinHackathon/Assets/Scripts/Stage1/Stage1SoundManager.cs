@@ -12,14 +12,12 @@ public class Stage1SoundManager : MonoBehaviour {
 	}
 	public void BGM()
     {
-        audio.volume = 0.05f;
         audio.clip = bgm;
         audio.Play();
+        audio.loop = true;
     }
     public void space()
     {
-        audio.clip = spaceShip;
-        audio.volume = 1.0f;
-        audio.Play();
+        audio.PlayOneShot(spaceShip);
     }
 }

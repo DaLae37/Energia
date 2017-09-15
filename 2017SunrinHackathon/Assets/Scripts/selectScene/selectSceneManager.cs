@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class selectSceneManager : MonoBehaviour {
     private void Start()
     {
-        SoundManager.instance.mainBMG();
+
     }
     void Update()
     {
@@ -23,14 +23,17 @@ public class selectSceneManager : MonoBehaviour {
     }
     public void stage1()
     {
+        SoundManager.instance.DestThis();
         SceneManager.LoadScene("Stage1");
     }
     public void stage2()
     {
+        SoundManager.instance.DestThis();
         SceneManager.LoadScene("Stage2");
     }
     public void stage3()
     {
+        SoundManager.instance.DestThis();
         SceneManager.LoadScene("Stage3");
     }
 }
