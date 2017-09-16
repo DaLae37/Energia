@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class mainSceneManager : MonoBehaviour {
     // Use this for initialization
-    void Start () { 
+    void Start () {
+        Screen.SetResolution(Screen.width, Screen.width * 16 / 9, true);
         SoundManager.instance.mainBMG();
     }
 	
