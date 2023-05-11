@@ -1,14 +1,14 @@
 # Enrgia
 
-![메인]()
+![메인](https://www.dalae37.com/project/energia/resource/image/energia.webp)
 
-![인게임]()
+![인게임](https://www.dalae37.com/project/energia/resource/image/energia_ingame.webp)
 
-![메뉴3]()
+![메인1](https://www.dalae37.com/project/energia/resource/image/energia_main1.webp)
 
-![메뉴2]()
+![메인2](https://www.dalae37.com/project/energia/resource/image/energia_main2.webp)
 
-![게임 오버]()
+![게임 오버](https://www.dalae37.com/project/energia/resource/image/energia_gameover.webp)
 
 # 개발 엔진
 
