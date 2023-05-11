@@ -18,4 +18,4 @@
 
 [유튜브]()
 
-[플레이 방법]()
+[플레이 방법](https://github.com/DaLae37/Energia/releases/download/v1.0.0/HowToPlay.pdf)
