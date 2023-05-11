@@ -1,7 +1,0 @@
-#Tue Jul 25 02:59:41 KST 2017
-base.0=D\:\\Coding\\UnityProject\\2017SunrinHackathon\\Export\\2017SunrinHackathon\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\WebViewPlugin_6d7240f4f925ba1c29a66add7ea03a14666c1a63
-renamed.1=classes.dex
-renamed.0=classes2.dex
-file.1=D\:\\Coding\\UnityProject\\2017SunrinHackathon\\Export\\2017SunrinHackathon\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\unity-classes_c0fa3852d9fd52254c20e415cc76668a9e7ffd44\\classes.dex
-base.1=D\:\\Coding\\UnityProject\\2017SunrinHackathon\\Export\\2017SunrinHackathon\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\unity-classes_c0fa3852d9fd52254c20e415cc76668a9e7ffd44
-file.0=D\:\\Coding\\UnityProject\\2017SunrinHackathon\\Export\\2017SunrinHackathon\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\WebViewPlugin_6d7240f4f925ba1c29a66add7ea03a14666c1a63\\classes.dex

@@ -1,4 +1,0 @@
-#Tue Jul 25 02:59:42 KST 2017
-base.0=D\:\\Coding\\UnityProject\\2017SunrinHackathon\\Export\\2017SunrinHackathon\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_8
-renamed.0=classes.dex
-file.0=D\:\\Coding\\UnityProject\\2017SunrinHackathon\\Export\\2017SunrinHackathon\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_8\\classes.dex

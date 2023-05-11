@@ -1,7 +1,0 @@
-#Tue Jul 25 02:59:42 KST 2017
-base.0=D\:\\Coding\\UnityProject\\2017SunrinHackathon\\Export\\2017SunrinHackathon\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_95c1e059f04e30d7cbbd9f8be0112652baa07867
-renamed.1=classes.dex
-renamed.0=classes2.dex
-file.1=D\:\\Coding\\UnityProject\\2017SunrinHackathon\\Export\\2017SunrinHackathon\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_390a9002715c0f0516b5431cef6cb611077ef33d\\classes.dex
-base.1=D\:\\Coding\\UnityProject\\2017SunrinHackathon\\Export\\2017SunrinHackathon\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_390a9002715c0f0516b5431cef6cb611077ef33d
-file.0=D\:\\Coding\\UnityProject\\2017SunrinHackathon\\Export\\2017SunrinHackathon\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_95c1e059f04e30d7cbbd9f8be0112652baa07867\\classes.dex
