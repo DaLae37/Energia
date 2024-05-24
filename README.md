@@ -16,6 +16,6 @@
 
 # 기타
 
-[유튜브]()
+[유튜브](https://youtu.be/-EjmhXH1lbQ)
 
 [플레이 방법](https://github.com/DaLae37/Energia/releases/download/v1.0.1/HowToPlay.pdf)
